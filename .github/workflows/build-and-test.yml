@@ -49,7 +49,14 @@ jobs:
     - name: Run Python script
       run: |
         python hello.py # Execute the hello.py script
-
+        
+    # Set PYTHONPATH and run tests with pytest
+    - name: Run Python tests
+      env:
+        PYTHONPATH: .
+      run: | 
+        pytest
+          
     # Set up Java environment
     - name: Set up Java
       uses: actions/setup-java@v4
